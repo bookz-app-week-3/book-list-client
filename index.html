@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/x-handlebars-template" id="error-template">
+    <p>{{status:}} {{statusText}}</p>
+  </script>
+
     <script type="text/x-handlebars-template" id="book-template">
       <section>
         <img src="{{image_url}}">
@@ -16,12 +20,17 @@
           </h2>
         </div>
       </section>
-
     </script>
   </head>
+
   <body>
-    <section class="container">
-      <main class="book-view">
+    <section class="error-view container">
+      <main id="error-message">
+        <h2>Oops! Something is gravely awry.</h2>
+      </main>
+    </section>
+
+    <section class="book-view container">
         <h2>My Books</h2>
       </main>
 
