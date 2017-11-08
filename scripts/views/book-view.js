@@ -3,13 +3,18 @@ app = app || {};
 (function (module){
   const bookView = {};
 
-  bookView.initIndexPage = function() {
-    $('.container').hide;
-    $('.book-view').show;
-    app.Books.all.map(books => $('book-view').append(books.toHtml()));
+  function reset() {
+    $('.container').hide();
   }
-  $(document).ready(function() {
-    app.Books.fetchAll(bookView.initIndexPage);
-  });
+
+  bookView.initIndexPage = function() {
+    $('.container').show();
+    $('.book-view').empty();
+    app.Book.all.map(book => $('.book-view').append(book.toHtml()));
+  }
   module.bookView = bookView;
 })(app)
+
+$(document).ready(function() {
+  app.Book.fetchAll(app.bookView.initIndexPage);
+});
