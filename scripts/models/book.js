@@ -3,16 +3,20 @@ var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
 
 (function(module){
   function errorCallback(err) {
-    module.errorView.initErrorPage(err);
+    console.error(err);
+    module.errorview.initErrorPage(err);
   }
-
-
   function Book(bookObject) {
     Object.keys(bookObject).forEach(key => this[key] = bookObject[key]);
   }
 
-  Book.all = [];
 
+  Book.prototype.toHtml = function() {
+    var template = Handlebars.compile($('#book-template').text());
+    return template(this);
+  }
+
+  Book.all = [];
   Book.loadAll = rows => {
     Book.all = rows.map(book => new Book(book))
   }

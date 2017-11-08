@@ -3,8 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/x-handlebars-template" id="book-template">
+      <section>
+        <img src="{{image_url}}">
+        <div>
+          <h1>
+            {{title}}
+          </h1>
+          <h2>
+            {{author}}
+          </h2>
+        </div>
+      </section>
+
+    </script>
   </head>
   <body>
     <h1>hello world</h1>
+    <main id="books-here">
+      
+    </main>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script type="text/javascript" src="scripts/models/book.js"></script>
+    <script type="text/javascript" src="scripts/views/book-view.js"></script>
+    <script type="text/javascript" src="scripts/views/error-view.js"></script>
+
   </body>
 </html>
