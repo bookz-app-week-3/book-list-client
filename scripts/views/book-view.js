@@ -1,4 +1,4 @@
-app = app || {};
+const app = app || {};
 
 (function (module){
   const bookView = {};
