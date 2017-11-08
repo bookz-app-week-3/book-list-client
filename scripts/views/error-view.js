@@ -1,4 +1,4 @@
-const app = app || {};
+var app = app || {};
 
 (function (module){
   const errorView = {};
