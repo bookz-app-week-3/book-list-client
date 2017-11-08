@@ -17,6 +17,7 @@ var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
   }
 
   Book.all = [];
+
   Book.loadAll = rows => {
     Book.all = rows.map(book => new Book(book))
   }
