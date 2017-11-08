@@ -12,9 +12,15 @@ app = app || {};
     $('.book-view').empty();
     app.Book.all.map(book => $('.book-view').append(book.toHtml()));
   }
+
+  bookView.singleInitIndexPage = function() {
+    $('.container').show();
+    $('.single-view').empty();
+    app.Book.all.map(book => $('.single-view').append(book.toHtml()));
+  }
   module.bookView = bookView;
 })(app)
 
 $(document).ready(function() {
-  app.Book.fetchAll(app.bookView.initIndexPage);
+  app.Book.fetchOne(app.bookView.singleInitIndexPage);
 });
