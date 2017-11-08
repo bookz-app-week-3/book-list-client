@@ -17,16 +17,16 @@ var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
     Book.all = rows.map(book => new Book(book))
   }
 
-  // Book.fetchAll = callback =>
-  //   $.get(`${__API_URL__}/api/v1/books`)
-  //     .then(Book.loadAll)
-  //     .then(callback)
-  //     .catch(errorCallback);
-
-  Book.fetchOne = id =>
-    $.get(`${__API_URL__}/api/v1/books/1`)
-      .then(data => id )
+  Book.fetchAll = callback =>
+    $.get(`${__API_URL__}/api/v1/books`)
+      .then(Book.loadAll)
+      .then(callback)
       .catch(errorCallback);
+
+  // Book.fetchOne = id =>
+  //   $.get(`${__API_URL__}/api/v1/books/1`)
+  //     .then(data => id )
+  //     .catch(errorCallback);
 
   module.Book = Book
 })(app)

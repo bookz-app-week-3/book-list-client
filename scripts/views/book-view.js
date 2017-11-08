@@ -22,5 +22,5 @@ app = app || {};
 })(app)
 
 $(document).ready(function() {
-  app.Book.fetchOne(app.bookView.singleInitIndexPage);
+  app.Book.fetchAll(app.bookView.initIndexPage);
 });
