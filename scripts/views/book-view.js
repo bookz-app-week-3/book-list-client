@@ -13,6 +13,13 @@ app = app || {};
     app.Book.all.map(book => $('.book-view').append(book.toHtml()));
   }
 
+  // bookView.initCreateFormPage = function() {
+  //   console.log('initCreateFormPage');
+  //   resetView();
+  //   $('.create-view').show();
+  //   $('#create-form').on('submit', )
+  // }
+
   bookView.singleInitIndexPage = function() {
     $('.container').show();
     $('.single-view').empty();
