@@ -1,5 +1,5 @@
 var app = app || {};
-var __API_URL__ = 'https://jc-knbooklist.herokuapp.com';
+var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
 
 (function(module){
   function errorCallback(err) {
@@ -7,22 +7,22 @@ var __API_URL__ = 'https://jc-knbooklist.herokuapp.com';
   }
 
 
-  function Task(taskObject) {
-    Object.keys(taskObject).forEach(key => this[key] = taskObject[key]);
+  function Book(bookObject) {
+    Object.keys(bookObject).forEach(key => this[key] = bookObject[key]);
   }
 
-  Task.all = [];
+  Book.all = [];
 
-  Task.loadAll = rows => {
-    Task.all = rows.map(task => new Task(task))
+  Book.loadAll = rows => {
+    Book.all = rows.map(book => new Book(book))
   }
 
-  Task.fetchAll = callback =>
-    $.get(`${__API_URL__}/books`)
-      .then(Task.loadAll)
+  Book.fetchAll = callback =>
+    $.get(`${__API_URL__}/api/v1/books`)
+      .then(Book.loadAll)
       .then(callback)
       .catch(errorCallback);
 
 
-  module.Task = Task
+  module.Book = Book
 })(app)
