@@ -8,8 +8,9 @@ var app = app || {};
   }
 
   bookView.initIndexPage = function() {
-    $('.container').show();
-    $('.book-view').empty();
+    reset();
+    $('.book-view').show();
+    $('#book-list').empty();
     app.Book.all.map(book => $('.book-view').append(book.toHtml()));
   }
 
@@ -20,10 +21,12 @@ var app = app || {};
   //   $('#create-form').on('submit', )
   // }
 
-  bookView.singleInitIndexPage = function() {
-    $('.container').show();
-    $('.single-view').empty();
-    app.Book.all.map(book => $('.single-view').append(book.toHtml()));
+  bookView.initDetailPage = function(ctx) {
+    reset();
+    $('.single-view').show();
+    $('.book-detail').empty();
+    let template = Handlebars.compile($('#book-detail-template').text());
+    $('.book-detail').append(template(ctx));
   }
   module.bookView = bookView;
 })(app)
