@@ -10,7 +10,7 @@ var app = app || {};
   bookView.initIndexPage = function() {
     reset();
     $('.book-view').show();
-    $('#book-list').empty();
+    $('.list-book').empty();
     app.Book.all.map(book => $('.book-view').append(book.toHtml()));
   }
 
@@ -24,9 +24,9 @@ var app = app || {};
   bookView.initDetailPage = function(ctx) {
     reset();
     $('.single-view').show();
-    $('.book-detail').empty();
-    let template = Handlebars.compile($('#book-detail-template').text());
-    $('.book-detail').append(template(ctx));
+    $('.book-details').empty();
+    let template = Handlebars.compile($('#single-template').text());
+    $('.book-details').append(template(ctx));
   }
   module.bookView = bookView;
 })(app)
