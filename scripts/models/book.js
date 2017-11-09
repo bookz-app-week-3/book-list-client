@@ -11,6 +11,10 @@ var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
     Object.keys(bookObject).forEach(key => this[key] = bookObject[key]);
   }
 
+  Book.prototype.toHtml = function() {
+    var template = Handlebars.compile($('#book-template').text());
+    return template(this);
+  }
   Book.all = [];
 
   Book.loadAll = rows => {
