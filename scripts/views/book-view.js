@@ -14,23 +14,34 @@ var app = app || {};
     app.Book.all.map(book => $('.book-view').append(book.toHtml()));
   }
 
-  // bookView.initCreateFormPage = function() {
-  //   console.log('initCreateFormPage');
-  //   resetView();
-  //   $('.create-view').show();
-  //   $('#create-form').on('submit', )
-  // }
-
   bookView.initDetailPage = function(ctx) {
     reset();
     $('.single-view').show();
-    $('.book-detail').empty();
-    let template = Handlebars.compile($('#book-detail-template').text());
-    $('.book-detail').append(template(ctx));
+    $('.single-book').empty();
+    let template = Handlebars.compile($('#single-template').text());
+    $('.single-book').append(template(ctx));
   }
   module.bookView = bookView;
+
+  bookView.initFormPage = function() {
+    reset();
+    $('.create-view').show();
+    $('.create-book').on('submit', function(e) {
+      e.preventDefault();
+      let newBook = {
+        book_id: e.target.book_id.value,
+        title: e.target.title.value,
+        author: e.target.author.value,
+        isbn: e.target.isbn.value,
+        image_url: e.target.image_url.value,
+        description: e.target.description.value
+      };
+      module.Book.create(newBook);
+    })
+  }
+
 })(app)
 
-$(document).ready(function() {
-  app.Book.fetchAll(app.bookView.initIndexPage);
-});
+// $(document).ready(function() {
+//   app.Book.fetchAll(app.bookView.initIndexPage);
+// });

@@ -37,7 +37,7 @@
         <h2>{{author}}</h2>
         <h2>{{isbn}}</h2>
       </div>
-        <img src="{{img_url}}">
+        <img src="{{image_url}}">
         <p>{{description}}</p>
     </div>
     </li>
@@ -77,18 +77,18 @@
     </section>
 
     <section class="single-view container">
-        <h2>My Selection</h2>
-        <ul class="single-book"></ul>
+        <main class="single-book"></main>
     </section>
 
     <section class="create-view container">
       <h2>Add New Book</h2>
       <form class="create-book">
-        <input type="text" name="title" value="">
-        <input type="text" name="author" value="">
-        <input type="text" name="isbn" value="">
-        <input type="text" name="image_url" value="">
-        <textarea name="description" rows="8" cols="80"></textarea>
+        <input type="text" name="book_id" placeholder="Create a Book ID" value="">
+        <input type="text" name="title" placeholder="Book Title" value="">
+        <input type="text" name="author" placeholder="Author" value="">
+        <input type="text" name="isbn" placeholder="ISBN" value="">
+        <input type="text" name="image_url" placeholder="Image URL" value="">
+        <textarea name="description" placeholder="Enter a description of the book..." rows="8" cols="80"></textarea>
         <button type="submit">Submit</button>
       </form>
     </section>
@@ -114,6 +114,7 @@
     <script type="text/javascript" src="scripts/models/book.js"></script>
     <script type="text/javascript" src="scripts/views/book-view.js"></script>
     <script type="text/javascript" src="scripts/views/error-view.js"></script>
+    <script type="text/javascript" src="scripts/views/routes.js"></script>
 
   </body>
 </html>
