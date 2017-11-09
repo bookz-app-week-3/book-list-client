@@ -29,18 +29,15 @@ var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
 
   Book.fetchOne = (ctx, callback) =>
     $.get(`${__API_URL__}/api/v1/books/${ctx.params.book_id}`)
-      .then(results => {
-        console.log(ctx.book);
-        ctx.book = results[0]
-
-      })
+      .then(results => ctx.book = results[0])
       .then(callback)
       .catch(errorCallback);
 
-  Book.create = book =>
+  Book.create = book => {
+    console.log(book);
     $.post(`${__API_URL__}/api/v1/books`, book)
       .then(() => page('/'))
       .catch(errorCallback);
-
+    }
   module.Book = Book
 })(app)
