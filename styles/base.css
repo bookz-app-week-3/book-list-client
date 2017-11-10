@@ -1,0 +1,35 @@
+  * {
+    color: gray;
+    border: 1px solid red;
+  }
+
+  body {
+  background-color: lightblue;
+  max-width: 667px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  }
+
+  header {
+  background-color: black;
+  width: 100%;
+  line-height: 5em;
+  height: 5em;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  margin-left: 0;
+}
+
+  footer {
+
+  }
+
+  a, a:link, a:active {
+  text-decoration: none;
+  color: #777;
+  }

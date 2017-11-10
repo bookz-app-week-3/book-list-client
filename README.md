@@ -8,7 +8,7 @@ _Your README.md must include:_
 # Project Name
 
 **Author**: Joel Clair and Kerry Nordstrom
-**Version**: 1.1.0 (increment the patch/fix version number up if you make more commits past your first submission)
+**Version**: 1.3.0 (increment the patch/fix version number up if you make more commits past your first submission)
 
 ## Overview
 <!--  -->
@@ -30,7 +30,9 @@ Libraries: JQuery, Normalize
 11-07-17 10:00pm - Finalized all .map().reduce() logic totaling all words and filtering these totals to individual authors.
 -->
 11/7/2017 1:52pm - pushed to gh pages.
-11/7/2017 1:40pm - finished day1 project and worked on completing the singularity of fetchone.
+11/8/2017 1:40pm - finished day1 project and worked on completing the singularity of fetchone.
+11/9/2017 1:42pm - finished day2 project heroku server is responding and taking in new books.
+11/10/2017 1:46pm - created a delete method working on update method.
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 -->

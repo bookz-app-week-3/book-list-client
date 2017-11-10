@@ -11,6 +11,10 @@ var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
     Object.keys(bookObject).forEach(key => this[key] = bookObject[key]);
   }
 
+  Book.prototype.toHtml = function() {
+    var template = Handlebars.compile($('#book-template').text());
+    return template(this);
+  }
   Book.all = [];
 
   Book.loadAll = rows => {
@@ -29,10 +33,34 @@ var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
       .then(callback)
       .catch(errorCallback);
 
-  // Book.create = book =>
-  //   $.post(`${__API_URL__}/api/v1/books`, book)
-  //     .then(() => page('/'))
-  //     .catch(errorCallback);
+  Book.delete = (ctx, callback) => {
+    console.log(ctx)
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${ctx.params.book_id}`,
+      method: 'DELETE',
+      success: function() {
+        page('/');
+        callback();
+      }
+    })
+}
+  Book.update = (ctx, callback) => {
+    console.log(ctx)
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${ctx.params.book_id}`,
+      method: 'PUT',
+      success: function() {
+        page('/');
+        callback();
+      }
+    })
+  }
 
+  Book.create = book => {
+    console.log(book);
+    $.post(`${__API_URL__}/api/v1/books`, book)
+      .then(() => page('/'))
+      .catch(errorCallback);
+  }
   module.Book = Book
 })(app)
