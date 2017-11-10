@@ -39,7 +39,7 @@ var app = app || {};
     })
   }
 
-  bookView.initUpdateFormPage = function() {
+  bookView.initUpdateFormPage = function(ctx) {
     reset();
     $('.update-view').show();
     $('.update-book').on('submit', function(e) {
@@ -51,7 +51,7 @@ var app = app || {};
         image_url: e.target.image_url.value,
         description: e.target.description.value,
       };
-      module.Book.update(updatedBook);
+      module.Book.update(updatedBook, ctx);
     })
   }
 

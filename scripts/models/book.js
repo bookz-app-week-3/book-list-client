@@ -44,16 +44,18 @@ var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
       }
     })
 }
-  Book.update = (ctx, callback) => {
+  Book.update = (book, ctx) => {
+    console.log(book)
     console.log(ctx)
     $.ajax({
       url: `${__API_URL__}/api/v1/books/${ctx.params.book_id}`,
       method: 'PUT',
+      data: book,
       success: function() {
         page('/');
-        callback();
       }
     })
+    console.log(`${__API_URL__}/api/v1/books/${ctx.params.book_id}`)
   }
 
   Book.create = book => {
