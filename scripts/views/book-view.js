@@ -10,7 +10,7 @@ var app = app || {};
   bookView.initIndexPage = function() {
     reset();
     $('.book-view').show();
-    $('.list-book').empty();
+    $('.list-book').hide();
     app.Book.all.map(book => $('.book-view').append(book.toHtml()));
   }
 
