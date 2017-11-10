@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="styles/modules/formView.css">
   <link rel="stylesheet" href="styles/modules/adminView.css">
 
+  <base href=".">
+
   <script type="text/x-handlebars-template" id="error-template">
     <p>{{status:}} {{statusText}}</p>
   </script>
@@ -28,9 +30,9 @@
         </div>
         <div class="book-edits">
           <ul>
-          <li class="more-button"><a href="/books/{{book_id}}">View More Details</a></li>
-          <li class="update-button"><a href="/books/{{book_id}}/update">Update this Book</a></li>
-          <li class="delete-button"><a href="/books/{{book_id}}/delete">Delete this Book</a></li>
+          <li class="more-button"><a href="books/{{book_id}}">View More Details</a></li>
+          <li class="update-button"><a href="books/{{book_id}}/update">Update this Book</a></li>
+          <li class="delete-button"><a href="books/{{book_id}}/delete">Delete this Book</a></li>
           </ul>
         </div>
       </div>
@@ -63,8 +65,8 @@
       <h1>Tome Fellows</h1>
       <div class="icon-menu"></div>
   <div class="nav-links">
-    <a href="/">Go Tome</a>
-    <a href="/books/new">Add New Tome</a>
+    <a href="">Go Tome</a>
+    <a href="books/new">Add New Tome</a>
   </div>
   </header>
 
