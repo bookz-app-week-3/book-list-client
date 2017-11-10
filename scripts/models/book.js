@@ -33,7 +33,8 @@ var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
       .then(callback)
       .catch(errorCallback);
 
-  Book.delete = (ctx, callback) =>
+  Book.delete = (ctx, callback) => {
+    console.log(ctx)
     $.ajax({
       url: `${__API_URL__}/api/v1/books/${ctx.params.book_id}`,
       method: 'DELETE',
@@ -42,7 +43,18 @@ var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
         callback();
       }
     })
-
+}
+  Book.update = (ctx, callback) => {
+    console.log(ctx)
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${ctx.params.book_id}`,
+      method: 'PUT',
+      success: function() {
+        page('/');
+        callback();
+      }
+    })
+  }
 
   Book.create = book => {
     console.log(book);

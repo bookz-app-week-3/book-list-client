@@ -29,8 +29,8 @@
         <div class="book-edits">
           <ul>
           <li class="more-button"><a href="/books/{{book_id}}">View More Details</a></li>
-          <li class="update-button"><a href="/books/{{book_id}}">Update this Book</a></li>
-          <li class="delete-button"><li href="/books/{{book_id}}/delete">Delete this Book</a></li>
+          <li class="update-button"><a href="/books/{{book_id}}/update">Update this Book</a></li>
+          <li class="delete-button"><a href="/books/{{book_id}}/delete">Delete this Book</a></li>
           </ul>
         </div>
       </div>
@@ -86,7 +86,6 @@
     <section class="create-view container">
       <h2>Add New Book</h2>
       <form class="create-book">
-        <input type="text" name="book_id" placeholder="Create a Book ID" value="">
         <input type="text" name="title" placeholder="Book Title" value="">
         <input type="text" name="author" placeholder="Author" value="">
         <input type="text" name="isbn" placeholder="ISBN" value="">
@@ -97,9 +96,15 @@
     </section>
 
       <section class="update-view container">
-        <h2>Update your Boook</h2>
-        <main class="update-book">
-        </main>
+        <h2>Update your Book</h2>
+        <form class="update-book">
+          <input type="text" name="title" placeholder="Book Title" value="">
+          <input type="text" name="author" placeholder="Author" value="">
+          <input type="text" name="isbn" placeholder="ISBN" value="">
+          <input type="text" name="image_url" placeholder="Image URL" value="">
+          <textarea name="description" placeholder="Enter a description of the book..." rows="8" cols="80"></textarea>
+          <button type="submit">Submit</button>
+        </form>
       </section>
 
       <section class="admin-view container">

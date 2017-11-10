@@ -29,7 +29,6 @@ var app = app || {};
     $('.create-book').on('submit', function(e) {
       e.preventDefault();
       let newBook = {
-        book_id: e.target.book_id.value,
         title: e.target.title.value,
         author: e.target.author.value,
         isbn: e.target.isbn.value,
@@ -37,6 +36,22 @@ var app = app || {};
         description: e.target.description.value
       };
       module.Book.create(newBook);
+    })
+  }
+
+  bookView.initUpdateFormPage = function() {
+    reset();
+    $('.update-view').show();
+    $('.update-book').on('submit', function(e) {
+      e.preventDefault();
+      let updatedBook = {
+        title: e.target.title.value,
+        author: e.target.author.value,
+        isbn: e.target.isbn.value,
+        image_url: e.target.image_url.value,
+        description: e.target.description.value,
+      };
+      module.Book.update(updatedBook);
     })
   }
 
