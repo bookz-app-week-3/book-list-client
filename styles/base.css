@@ -1,3 +1,8 @@
+  * {
+    color: gray;
+    border: 1px solid red;
+  }
+
   body {
   background-color: lightblue;
   max-width: 667px;
@@ -7,14 +12,14 @@
   }
 
   header {
-  background-color: #f4aa42;
+  background-color: black;
   width: 100%;
-  line-height: 75px;
-  height: 75px;
+  line-height: 5em;
+  height: 5em;
 }
 
 ul {
-  list-style: none;
+  list-style-type: none;
   padding-left: 0;
   margin: 0;
   margin-left: 0;
@@ -22,10 +27,6 @@ ul {
 
   footer {
 
-  }
-
-  ul {
-    list-style: none;
   }
 
   a, a:link, a:active {
