@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/modules.css">
-  <link rel="stylesheet" href="styles/icon.css">
+  <link rel="stylesheet" href="styles/vendor/icomoon/icons.css">
   <link rel="stylesheet" href="styles/modules/bookView.css">
   <link rel="stylesheet" href="styles/modules/singleView.css">
   <link rel="stylesheet" href="styles/modules/errorView.css">
@@ -25,9 +25,13 @@
         <div class="book-overlay">
           <h1>{{title}}</h1>
           <h2>{{author}}</h2>
-          <p class="more-button"><a href="/books/{{book_id}}">View More Details</a></p>
-          <p class="update-button"><a href="/books/{{book_id}}">Update this Book</a></p>
-          <p class="delete-button"><a href="/books/{{book_id}}/delete">Delete this Book</a></p>
+        </div>
+        <div class="book-edits">
+          <ul>
+          <li class="more-button"><a href="/books/{{book_id}}">View More Details</a></li>
+          <li class="update-button"><a href="/books/{{book_id}}">Update this Book</a></li>
+          <li class="delete-button"><li href="/books/{{book_id}}/delete">Delete this Book</a></li>
+          </ul>
         </div>
       </div>
     </li>
@@ -58,13 +62,10 @@
     <div class="header">
       <h1>Tome Fellows</h1>
       <div class="icon-menu"></div>
-    </div>
-  <nav>
-    <ul>
-      <li><a href="/">Tome</a></li>
-      <li><a href="/books/new">Add New Tome</a></li>
-    </ul>
-  </nav>
+  <div class="nav-links">
+    <a href="/">Go Tome</a>
+    <a href="/books/new">Add New Tome</a>
+  </div>
   </header>
 
   <body>

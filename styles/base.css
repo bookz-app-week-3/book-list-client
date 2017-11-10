@@ -1,16 +1,29 @@
-@media only screen  and (max-device-width: 667px)
-  {
+  * {
+    color: gray;
+    border: 1px solid red;
+  }
 
   body {
-    background-color: lightblue;
+  background-color: lightblue;
+  max-width: 667px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
   }
 
   header {
-    margin: 0px;
-    width: 100%;
-    background-color: lightgreen;
-    height: 125px;
-  }
+  background-color: black;
+  width: 100%;
+  line-height: 5em;
+  height: 5em;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  margin-left: 0;
+}
 
   footer {
 
@@ -20,4 +33,3 @@
   text-decoration: none;
   color: #777;
   }
-}
