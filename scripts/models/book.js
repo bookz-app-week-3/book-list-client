@@ -33,6 +33,17 @@ var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
       .then(callback)
       .catch(errorCallback);
 
+  Book.delete = (ctx, callback) =>
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${ctx.params.book_id}`,
+      method: 'DELETE',
+      success: function() {
+        page('/');
+        callback();
+      }
+    })
+
+
   Book.create = book => {
     console.log(book);
     $.post(`${__API_URL__}/api/v1/books`, book)
