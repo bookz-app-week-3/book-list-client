@@ -17,6 +17,13 @@
 
   <base href=".">
 
+  <section id="adminlogin" class="admin-view container">
+    <h2>Admin Login</h2>
+  <form action="#" id="admin-login">
+    <input type="password" name="password" placeholder="password is password" required>
+  </form>
+  </section>
+
   <script type="text/x-handlebars-template" id="error-template">
     <p>{{status:}} {{statusText}}</p>
   </script>
@@ -67,6 +74,8 @@
   <div class="nav-links">
     <a href="">Go Tome</a>
     <a href="books/new">Add New Tome</a>
+    <a id="login">Login</a>
+    <a id="logout">Logout</a>
   </div>
   </header>
 
@@ -109,12 +118,6 @@
         </form>
       </section>
 
-      <section class="admin-view container">
-        <h2>Admin Login</h2>
-        <main class="admin-book">
-        </main>
-      </section>
-
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -124,6 +127,7 @@
     <script type="text/javascript" src="scripts/models/book.js"></script>
     <script type="text/javascript" src="scripts/views/book-view.js"></script>
     <script type="text/javascript" src="scripts/views/error-view.js"></script>
+    <script type="text/javascript" src="scripts/views/admin-view.js"></script>
     <script type="text/javascript" src="scripts/views/routes.js"></script>
 
   </body>

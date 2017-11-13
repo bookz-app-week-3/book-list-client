@@ -12,6 +12,8 @@ var app = app || {};
     $('.book-view').show();
     $('.list-book').hide();
     app.Book.all.map(book => $('.book-view').append(book.toHtml()));
+    // $('.update-button').hide();
+    // $('.delete-button').hide();
   }
 
   bookView.initDetailPage = function(ctx) {
@@ -57,6 +59,8 @@ var app = app || {};
 
 })(app)
 
+$('#login').click(() => app.adminView.initAdminPage());
+$('#logout').click(() => app.adminView.handleAdminLogout())
 // $(document).ready(function() {
 //   app.Book.fetchAll(app.bookView.initIndexPage);
 // });
