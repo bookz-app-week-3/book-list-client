@@ -43,7 +43,7 @@ var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
         callback();
       }
     })
-}
+  }
   Book.update = (book, ctx) => {
     console.log(book)
     console.log(ctx)
@@ -64,5 +64,20 @@ var __API_URL__ = 'https://jc-kn-booklist.herokuapp.com';
       .then(() => page('/'))
       .catch(errorCallback);
   }
+
+  Book.validateAdmin = function(token) {
+    $.get(`${__API_URL__}admin/`, {token})
+      .then((result) => {
+        if(result) {
+          localStorage.token = true;
+          app.adminView.handleAdmin();
+          $('#login').hide();
+          $('#logout').show();
+        } else{
+          alert('inncorrect password')
+        }
+      })
+  }
+
   module.Book = Book
 })(app)
