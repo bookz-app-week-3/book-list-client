@@ -6,31 +6,35 @@
 .icon-menu {
   color: darkred;
   font-size: 4em;
-  margin-top: -2em;
+  margin-top: -1em;
   position: relative;
   display: inline-block;
   float: left;
 }
 
 .nav-links {
-    /*display: none;*/
-    margin-top: -2.8em;
+    display: none;
+    margin-top: 1.5em;
     position: absolute;
     background-color: lightgray;
-    min-width: 150px;
+    min-width: 5%;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .nav-links a {
-  padding: 10px;
+  padding: 0 10px;
 }
 
-img {
-  height: 50%;
-  width: 50%;
+.nav-links li {
+  display: inline-block;
 }
+
+.expand{
+  display: block !important;
+  height: 1em;
+
 
 .book-edits ul {
   list-style: none;
@@ -58,11 +62,6 @@ img {
   background: rgba(0, 0, 0, 0.25);
 }
 
-
-
-
-@media only screen  and (min-width: 667px)
-  {
-
-}
+button{
+  padding: 0px;
 }
